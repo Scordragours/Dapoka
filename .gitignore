@@ -1,0 +1,20 @@
+# IDE :
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/*
+!.vscode/extensions.json
+
+# Node / NPM :
+**/node_modules/
+**/package-lock.json
+**/docs/
+**/dist/
+
+# .Env files
+**/.env.local
+**/.env.*.local
