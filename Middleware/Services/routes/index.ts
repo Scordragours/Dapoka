@@ -12,6 +12,7 @@ import articlesRouter from "./restaurants/articles";
 import ordersRouter from "./restaurants/orders";
 import statisticsRouter from "./restaurants/statistics";
 
+import paymentsRouter from "./payments/payments";
 import tokenRouter from "./tokens";
 
 export {
@@ -28,6 +29,8 @@ export {
     articlesRouter,
     ordersRouter,
     statisticsRouter,
+
+    paymentsRouter,
 
     tokenRouter
 };
