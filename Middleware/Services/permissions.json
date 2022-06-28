@@ -1,0 +1,471 @@
+[
+  {
+    "path": "/accounts/",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ]
+  },
+  {
+    "path": "/account/:email",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74",
+      "f56ec2ab97d604832d90f6394e3f341f",
+      "c453a4b8e8d98e82f35b67f433e3b4da"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/account/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ]
+  },
+  {
+    "path": "/account/:email",
+    "methode": "PUT",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/account/:email",
+    "methode": "DELETE",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/account/activate/:email",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "type-token": [
+      "Activate"
+    ]
+  },
+
+  {
+    "path": "/account/authentication/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ]
+  },
+
+  {
+    "path": "/account/forget-password/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ]
+  },
+  {
+    "path": "/account/forget-password/:email",
+    "methode": "PUT",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "type-token": [
+      "Forget-password"
+    ]
+  },
+
+  {
+    "path": "/account/sponsorship-code/verify/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/account/sponsorship-code/use/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "386c1f850fbd5f478fb4ef8a134c1740"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/monitoring/logs/",
+    "methode": "GET",
+    "api-key": [
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/notifications/mail/create-account/",
+    "methode": "POST",
+    "api-key": [
+      "9b945efebb006547a94415eadaa12921"
+    ]
+  },
+  {
+    "path": "/notifications/mail/delete-account/",
+    "methode": "POST",
+    "api-key": [
+      "9b945efebb006547a94415eadaa12921"
+    ]
+  },
+  {
+    "path": "/notifications/mail/forget-password/",
+    "methode": "POST",
+    "api-key": [
+      "9b945efebb006547a94415eadaa12921"
+    ]
+  },
+  {
+    "path": "/notifications/mail/change-password/",
+    "methode": "POST",
+    "api-key": [
+      "9b945efebb006547a94415eadaa12921"
+    ]
+  },
+  {
+    "path": "/notifications/mail/delivery/",
+    "methode": "POST",
+    "api-key": [
+      "386c1f850fbd5f478fb4ef8a134c1740"
+    ]
+  },
+
+  {
+    "path": "/restaurant/articles/:id_restaurant",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ]
+  },
+  {
+    "path": "/restaurant/article/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/article/:id_article",
+    "methode": "PUT",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/article/:id_article",
+    "methode": "DELETE",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/restaurant/menus/:id_restaurant",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ]
+  },
+  {
+    "path": "/restaurant/menu/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/menu/:id_menu",
+    "methode": "PUT",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/menu/:id_menu",
+    "methode": "DELETE",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/restaurant/orders/",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "SalesRepresentatives"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/orders/:id",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/order/:id_order",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/order/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/order/:id_order/add-status/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Deliverers",
+      "Restaurateurs"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/order/:id_order",
+    "methode": "DELETE",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/token/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74",
+      "9b945efebb006547a94415eadaa12921"
+    ]
+  },
+  {
+    "path": "/token/",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74",
+      "9b945efebb006547a94415eadaa12921"
+    ]
+  },
+
+  {
+    "path": "/payment/",
+    "methode": "POST",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+
+  {
+    "path": "/restaurant/statistics/",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  },
+  {
+    "path": "/restaurant/statistic/:id_restaurant",
+    "methode": "GET",
+    "api-key": [
+      "210acc4851961df7553144e8b1d77f6f",
+      "d7efa19fbe7d3972fd5adb6024223d74"
+    ],
+    "account-group": [
+      "Users",
+      "Deliverers",
+      "Restaurateurs",
+      "Developers",
+      "SalesRepresentatives",
+      "Technician"
+    ],
+    "type-token": [
+      "Login"
+    ]
+  }
+]

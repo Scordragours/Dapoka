@@ -13,6 +13,6 @@ Object.values(routes).forEach((route: any) => {
     app.use(route as express.Router)
 });
 
-app.listen(process.env.NodePort || 3000, (): void => console.log("Server start"));
+app.listen(process.env.NODE_PORT || 3000, (): void => console.log("Server start"));
 
 export {app};
