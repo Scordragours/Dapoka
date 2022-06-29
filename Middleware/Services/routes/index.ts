@@ -2,6 +2,7 @@ import accountsRouter from "./accounts/accounts";
 import authenticationRouter from "./accounts/authentication";
 import forgetPasswordRouter from "./accounts/forgetPassword";
 import sponsorshipCodeRouter from "./accounts/sponsorshipCode";
+import activateRouter from "./accounts/activate";
 
 import logsRouter from "./monitoring/logs";
 
@@ -20,6 +21,7 @@ export {
     authenticationRouter,
     forgetPasswordRouter,
     sponsorshipCodeRouter,
+    activateRouter,
 
     logsRouter,
 
