@@ -9,6 +9,6 @@ dotenv.config();
 let activateRouter = Router();
 activateRouter.post('/activate/:email', [
     param("email").exists().isEmail()
-], Utils.validateExpress, (req: Request, res: Response) => Utils.setResponse(new AccountAccess().activateAccount(req.body.email), res));
+], Utils.validateExpress, (req: Request, res: Response) => Utils.setResponse(new AccountAccess().activateAccount(req.params.email), res));
 
 export default activateRouter;
