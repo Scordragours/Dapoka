@@ -28,20 +28,13 @@ export default class Utils {
                     response: value.data
                 }))
                 .catch(error => {
-                    let status = 500;
-                    let response = {
-                        message: ""
+                    let errorMessage = {
+                        status: 500,
+                        response: {message: "Le service demandé n'est pas disponible actuellement."}
                     };
-
-                    if (error.response.status && error.response.data) {
-                        status = error.response.status;
-                        response = error.response.data;
-                    }
-
-                    reject({
-                        status: status,
-                        response: response
-                    })
+                    if (error.response && error.response.status && error.response.data.message)
+                        errorMessage = {status: error.response.status, response: error.response.data};
+                    reject(errorMessage);
                 });
         });
     }
