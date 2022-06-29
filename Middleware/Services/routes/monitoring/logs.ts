@@ -14,8 +14,6 @@ let logsRouter = Router();
  * @apiHeader {String} token-api Application identification key.
  * @apiHeader {String} token Identification token.
  *
- * @apiPermission Technician
- *
  * @apiQuery {String} type=null Type of logs.
  * @apiQuery {String} api-location=null The api that sent the log.
  * @apiQuery {String} origin=null IP address of the person responsible for the log.
