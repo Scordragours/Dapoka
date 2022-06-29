@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  account:
+    container_name: account
+    build: ./Accounts
+    ports:
+      - "3001:3001"
+    networks:
+      - dapoka_host
+
+  monitoring:
+    container_name: monitoring
+    build: ./Monitoring
+    ports:
+      - "3002:3002"
+    networks:
+      - dapoka_host
+
+  notifications:
+    container_name: notifications
+    build: ./Notifications
+    ports:
+      - "3003:3003"
+    networks:
+      - dapoka_host
+
+  payments:
+    container_name: payments
+    build: ./Payments
+    ports:
+      - "3004:3004"
+    networks:
+      - dapoka_host
+
+  restaurants:
+    container_name: restaurants
+    build: ./Restaurants
+    ports:
+      - "3005:3005"
+    networks:
+      - dapoka_host
+
+networks:
+  dapoka_host:
+    driver: bridge
