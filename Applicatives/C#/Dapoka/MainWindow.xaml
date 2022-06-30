@@ -33,7 +33,7 @@
             <DataGrid.Resources>
                 <ContextMenu x:Key="UserGridContextMenu">
                     <ContextMenu.Items>
-                        <MenuItem Header="BAN" Click="MenuItem_Click"/>
+                        <MenuItem Header="Suspend" Click="MenuItem_Click"/>
                         <MenuItem Header="UNBAN" Click="UnBan_Click"/>
                     </ContextMenu.Items>
                 </ContextMenu>
@@ -54,7 +54,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBoxItem Selected="Log_Selected">Log</ListBoxItem>
-            <ListBoxItem>User</ListBoxItem>
             <ListBoxItem Selected="Commande_Selected">Commande en cours</ListBoxItem>
         </ListBox>
 

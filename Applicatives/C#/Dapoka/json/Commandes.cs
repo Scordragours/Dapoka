@@ -14,13 +14,18 @@ namespace Dapoka.json
 
         public int idUser { get; set; }
 
-        public Array status { get; set; }
+        //public Array[] status { get; set; }
+        //public Array[] products { get; set; }
 
-        public Array products { get; set; }
+        public float totalPrice { get; set; }
 
         public string userLocation { get; set; }
 
         public string restaurantLocation { get; set; }
+
+        public string lastStatus { get; set; }
+
+        public DateTime date { get; set; }
 
         public int __v { get; set; }
 

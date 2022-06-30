@@ -91,24 +91,39 @@ namespace Dapoka
             var user = (User)menuItem.DataContext;
 
             var client = HttpClient.GetInstance();
-            commandes = deserializer.CommandesDeserialize(await client.Get("http://127.0.0.1:3000/restaurant/orders/" + user.id));
-
-            Window commandWindow = new CommandWindow1(commandes);
+            try 
+            { 
+                commandes = deserializer.CommandesDeserialize(await client.Get("http://127.0.0.1:3000/restaurant/orders/" + user.id, token));
+            }
+            catch (HttpRequestException error)
+            {
+                MessageBox.Show("Access denied", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+    Window commandWindow = new CommandWindow1(commandes);
             ShowWindow(commandWindow);
         }
 
         private async void Log_Selected(object sender, RoutedEventArgs e)
         {
             HttpClient client = HttpClient.GetInstance();
-            log = deserializer.LogDeserialize(await client.Get("http://127.0.0.1:3000/monitoring/logs/"));
+            try
+            {
+                log = deserializer.LogDeserialize(await client.Get("http://127.0.0.1:3000/monitoring/logs/", token));
+            }
+            catch (HttpRequestException error)
+            {
+                MessageBox.Show("Access denied", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             Window logWindow = new LogWindow(log);
             ShowWindow(logWindow); 
         }
 
-        private void Commande_Selected(object sender, RoutedEventArgs e)
+        private async void Commande_Selected(object sender, RoutedEventArgs e)
         {
-            Window commandeWindow = new CommandWindow1(commandes.Where(c => c.status.ToString() == "encours").ToList<Commandes>());
+            HttpClient client = HttpClient.GetInstance();
+            commandes = deserializer.CommandesDeserialize(await client.Get("http://127.0.0.1:3000/restaurant/orders", token));
+            Window commandeWindow = new CommandWindow1(commandes.Where(c => c.lastStatus.ToString() == "Order").ToList<Commandes>());
             ShowWindow(commandeWindow);
         }
 
@@ -136,7 +151,7 @@ namespace Dapoka
                 {
                     c.suspended = statues;
                     HttpClient client = HttpClient.GetInstance();
-                    client.Put(@"http://127.0.0.1:3000/account/" + c.email, content);
+                    client.Put(@"http://127.0.0.1:3000/account/" + c.email, content, token);
                 }
                 return c;
             }).ToList<User>();

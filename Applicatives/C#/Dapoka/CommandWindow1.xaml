@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dapoka"
         mc:Ignorable="d"
-        Title="CommandWindow1" Height="450" Width="800">
-    <DataGrid ItemsSource="{Binding Commande}" Name="CommandeGrid">
+        Title="CommandWindow1" Height="450" Width="800" Background="#B1D5EA">
+    <DataGrid ItemsSource="{Binding Commande}" Name="CommandeGrid" Background="#B1D5EA">
         <DataGrid.Resources>
             <ContextMenu x:Key="CommandeGridContextMenu" >
                 <ContextMenu.Items>
