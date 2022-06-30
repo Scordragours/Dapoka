@@ -3,7 +3,7 @@
   <div id="app">
     <router-view></router-view>
   </div>
-  <footer-page/>
+  <FooterPage/>
 </template>
 
 <script>

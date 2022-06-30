@@ -2,22 +2,27 @@
   <div class="test">
     <div class="wrapper bg-white mt-sm-5">
         <h4 class="pb-5 border-bottom">Mon compte</h4>
-      <div :key="account.id">
+      
         
       
     <div class="py-2">
+        <div class="testtttt">
+            <div v-for="(account, accounts) in accounts" :key="accounts.email" >
+            {{ accounts.name }}
+        </div>
+
         <div class="row py-2">
             <b>Mes informations</b>
             <br/>
             <br/>
             <div class="col-md-6">
-                <label for="firstname">Prénom</label>
-                <p>{{ account.name }}</p>
+                <label for="name">Prénom</label>
+                <p>{{ accounts.name }}</p>
             </div>
             <br/>
             <div class="col-md-6 pt-md-0 pt-3">
-                <label for="lastname">Nom</label>
-                <p>{{ account.firstname }}</p>
+                <label for="firstname">Nom</label>
+                <p>{{ accounts.firstname }}</p>
             </div>
             <br/>
         </div>
@@ -25,19 +30,19 @@
         <div class="row py-2">
             <div class="col-md-6">
                 <label for="email">Adresse Mail</label>
-                <p>{{ account.email }}</p>
+                <p>{{ accounts.email }}</p>
             </div>
             <br/>
             <div class="col-md-6 pt-md-0 pt-3">
                 <label for="phone">Numéro de téléphone</label>
-                <p>{{ account.telephoneNumber }}</p>
+                <p>{{ accounts.telephoneNumber }}</p>
             </div>
             <br/>
         </div>
         <div class="row py-2">
             <div class="col-md-6 pt-md-0 pt-3">
                 <label for="password">Mot de passe</label>
-                <p>{{ account.password }}</p>
+                <p>{{ accounts.password }}</p>
             </div>
                        
         </div>
@@ -52,7 +57,7 @@
                 <p>Transmettez votre code de parrainage à vos proches afin de bénéficier de réductions :</p>
             </div>
             <div class="code">
-                CODE : <p>{{ account.code }}</p>
+                CODE : <p>{{ accounts.code }}</p>
             </div>
             <br/>           
         </div>
@@ -82,14 +87,14 @@ export default {
 
     data(){
         return{
-            account: {}
+            accounts: {}
         }
     },
 
     mounted(){
         axios({
            method: "GET",
-           url: "http://10.176.128.135:3000/account/",
+           url: "http://127.0.0.1:3000/account/"+localStorage.getItem('email'),
            headers: {
             "token-api": "210acc4851961df7553144e8b1d77f6f",
             "token": localStorage.getItem('jwtToken')
@@ -97,8 +102,8 @@ export default {
         })
         
         .then((reponse) => {
-            this.account = reponse.data
-            console.log(this.account)
+            this.accounts = reponse.data
+            console.log(this.accounts)
             console.log(localStorage.jwtToken)
         });
         

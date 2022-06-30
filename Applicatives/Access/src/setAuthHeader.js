@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//
 const setAuthHeader = (token) => {
     if (token) {
         axios.defaults.headers = {
@@ -11,3 +11,4 @@ const setAuthHeader = (token) => {
 };
 
 export default setAuthHeader;
+//

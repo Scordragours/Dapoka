@@ -3,7 +3,7 @@ import App from './App.vue'
 import "bootstrap";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import setAuthHeader from "./setAuthHeader";
+import setAuthHeader from "./setAuthHeader";//
 
 
 import { createRouter, createWebHistory } from 'vue-router';
@@ -59,13 +59,13 @@ const routes = [
     {path: '/modifclient', component: modifclient},
     {path: '/suivi', component: suivi}    
 ]
-
+//
 if (localStorage.jwtToken) {
     setAuthHeader(localStorage.jwtToken);
 } else {
     setAuthHeader(false);
 }
-
+//
 const router = createRouter({
         history: createWebHistory(),
         routes

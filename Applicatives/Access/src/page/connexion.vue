@@ -70,6 +70,7 @@ export default {
             email: "",
             password: "",
         };
+    
     },
     methods: {
         loginUser() {
@@ -79,7 +80,10 @@ export default {
             };
 
             //const router = useRouter();
-
+            //if (localStorage.email) {
+              //  this.email = localStorage.email;
+            //}
+            localStorage.setItem('email', this.email)
             axios({
                 method: "POST",
                 url: "http://127.0.0.1:3000/account/authentication/",
