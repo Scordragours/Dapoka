@@ -9,6 +9,8 @@
 .vscode/*
 !.vscode/extensions.json
 **/packages/
+**/bin/
+**/obj/
 
 # Node / NPM :
 **/node_modules/
