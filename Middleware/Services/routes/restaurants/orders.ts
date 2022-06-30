@@ -136,11 +136,14 @@ ordersRouter.post('/restaurant/order/:id_order/add-status/', [
 
     param("id_order").exists().isString(),
     body("status").exists().matches(/^(ORDER|IN_PREPARATION|IN_DELIVERY|DELIVERED)$/)
-], Utils.validateExpress, Utils.tokenApiMiddleware, Utils.tokenMiddleware, (req: Request, res: Response) => {
+], Utils.validateExpress, Utils.tokenApiMiddleware, Utils.tokenMiddleware, async (req: Request, res: Response) => {
     Utils.setResponse(Utils.proxyTransport({
         method: "POST",
         url: `3005/order/${req.params.id_order}/add-status/`,
-        data: req.body
+        data: {
+            ...req.body,
+            email: (await Utils.verifyToken(req.headers.token as string)).email
+        }
     }), req, res, "Restaurants");
 });
 

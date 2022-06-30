@@ -11,6 +11,6 @@ statisticsRouter.get('/statistics/', Utils.validateExpress, (req: Request, res: 
 
 statisticsRouter.get('/statistic/:id_restaurant', [
     param("id_restaurant").exists().isString(),
-], Utils.validateExpress, (req: Request, res: Response) => Utils.setResponse(new OrdersAccess().statisticOrderByRestaurant(req.body.id_restaurant as number), res));
+], Utils.validateExpress, (req: Request, res: Response) => Utils.setResponse(new OrdersAccess().statisticOrderByRestaurant(parseInt(req.params.id_restaurant)), res));
 
 export default statisticsRouter;

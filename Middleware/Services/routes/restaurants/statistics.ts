@@ -43,7 +43,7 @@ statisticsRouter.get('/restaurant/statistic/:id_restaurant', [
     header("token-api").exists().isString(),
     header("token").exists().isString(),
 
-    param("id_restaurant").exists().isString(),
+    param("id_restaurant").exists().isNumeric(),
 ], Utils.validateExpress, Utils.tokenApiMiddleware, Utils.tokenMiddleware, (req: Request, res: Response) => {
     Utils.setResponse(Utils.proxyTransport({
         method: "DELETE",

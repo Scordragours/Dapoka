@@ -40,15 +40,16 @@ forgetPasswordRouter.post('/account/forget-password/', [
  * @apiGroup Accounts - forget-password
  *
  * @apiHeader {String} token-api Application identification key.
- * @apiHeader {String} token Identification token.
  *
- * @apiBody {String} email Account email.
+ * @apiBody {String} token Identification token.
+ * @apiBody {String} password New password.
+ *
  */
 forgetPasswordRouter.put('/account/forget-password/:email', [
     header("token-api").exists().isString(),
-    header("token").exists().isString(),
 
     param("email").exists().isEmail(),
+
     body("token").exists().isString(),
     body("password").exists().isString()
 ], Utils.validateExpress, Utils.tokenApiMiddleware, Utils.tokenMiddleware, (req: Request, res: Response) => {

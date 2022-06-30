@@ -30,7 +30,8 @@ ordersRouter.post('/order/', [
 
 ordersRouter.post('/order/:id_order/add-status/', [
     param("id_order").exists().isString(),
-    body("status").exists().matches(/^(ORDER|IN_PREPARATION|IN_DELIVERY|DELIVERED)$/)
+    body("status").exists().matches(/^(ORDER|IN_PREPARATION|IN_DELIVERY|DELIVERED)$/),
+    body("email").exists().isEmail()
 ],  Utils.validateExpress, (req: Request, res: Response) => {
     Utils.setResponse(
         new OrdersAccess()

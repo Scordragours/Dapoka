@@ -26,8 +26,7 @@ activateRouter.post('/account/activate/:email', [
 ], Utils.validateExpress, Utils.tokenApiMiddleware, Utils.tokenMiddleware, (req: Request, res: Response) => {
     Utils.setResponse(Utils.proxyTransport({
         method: "POST",
-        url: `3001/activate/${req.params.email}`,
-        data: req.body
+        url: `3001/activate/${req.params.email}`
     }), req, res, "Account");
 });
 
