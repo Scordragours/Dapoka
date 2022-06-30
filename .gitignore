@@ -8,7 +8,7 @@
 *.sw?
 .vscode/*
 !.vscode/extensions.json
-*/packages/
+**/packages/
 
 # Node / NPM :
 **/node_modules/
