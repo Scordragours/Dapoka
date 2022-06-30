@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "Account_dapoka": "file:Accounts",
-    "dapoka_accounts": "file:Accounts"
-  }
-}
