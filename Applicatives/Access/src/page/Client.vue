@@ -57,7 +57,7 @@
                 <p>Transmettez votre code de parrainage à vos proches afin de bénéficier de réductions :</p>
             </div>
             <div class="code">
-                CODE : <p>{{ accounts.code }}</p>
+                CODE : {{ accounts.sponsorshipCode }}
             </div>
             <br/>           
         </div>
@@ -68,8 +68,8 @@
                 <p>Si vous désactivez, toutes vos données seront supprimées</p>
             </div>
             <div class="button--danger">
-                <button class="btn danger"><router-link to="/connexion" exact><div class="disconnect">Se déconnecter</div></router-link></button>
-                <button class="btn danger">Désactiver</button>
+                <button class="btn danger"><router-link to="/connexion" exact><div class="disconnect" @click="disconnecting()">Se déconnecter</div></router-link></button>
+                <button class="btn danger"><router-link to="/connexion" exact><div class="disconnect" @click="deletingg()">Désactiver</div></router-link></button>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
 
 <script>
 import axios from 'axios'
-//import setAuthHeader from '@/setAuthHeader';
+//import setAuthHeader from '@/setAuthHeader'; 
 
 export default {
     name: 'Client',
@@ -88,6 +88,23 @@ export default {
     data(){
         return{
             accounts: {}
+        }
+    },
+
+    methods:{
+         disconnecting: function () {
+            localStorage.clear();
+        }, 
+        
+         deletingg: function () {
+            axios({
+                method: "DELETE",
+                url: "http://127.0.0.1:3000/account/"+localStorage.getItem('email'),
+                headers: {
+                    "token-api": "210acc4851961df7553144e8b1d77f6f",
+                    "token": localStorage.getItem('jwtToken')
+                }
+            })
         }
     },
 

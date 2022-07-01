@@ -25,7 +25,7 @@
             <br/>
             <div class="col-md-6 pt-md-0 pt-3">
                 <label for="phone">Numéro de téléphone</label>
-                <input type="number" class="bg-light form-control" id="telephoneNumber" name="telephoneNumber" placeholder="Numéro de téléphone" v-model="telephoneNumber">
+                <input type="tel" class="bg-light form-control" id="telephoneNumber" name="telephoneNumber" placeholder="Numéro de téléphone" v-model="telephoneNumber">
             </div>
             <br/>
         </div>
@@ -33,6 +33,14 @@
             <div class="col-md-6 pt-md-0 pt-3">
                 <label for="password">Mot de passe</label>
                 <input type="password" class="bg-light form-control" minlength="8" required id="password" name="password" placeholder="Mot de passe" v-model="password">
+            </div>
+            <div class="form-group">
+                <label class="form-control-label text-muted">Type de compte</label>
+                <select name="group" id="group" class="form-controlt" v-model="group">
+                    <option value="Users" selected>Client</option>
+                    <option value="Restaurateurs">Restaurateur</option>
+                    <option value="Deliverers">Livreur</option>
+                </select>
             </div>
                        
         </div>
@@ -48,7 +56,7 @@
 
 <script>
 import axios from "axios";
-import {useRouter} from "vue-router";
+import setAuthHeader from '@/setAuthHeader';
 
 export default {
     data() {
@@ -59,6 +67,7 @@ export default {
             email: "",
             password: "",
             telephoneNumber: "",
+            group: "",
         };
     },
     methods: {
@@ -70,20 +79,23 @@ export default {
                 email: this.email,
                 password: this.password,
                 telephoneNumber: this.telephoneNumber,
+                group: this.group,
             };
 
-            const router = useRouter();
-
             axios({
-                method: "POST",
-                url: "http://10.176.128.135:3000/account/",
+                method: "PUT",
+                url: "http://10.176.128.135:3000/account/"+localStorage.getItem('email'),
                 headers: {
-                "token-api": "210acc4851961df7553144e8b1d77f6f"
+                    "token-api": "210acc4851961df7553144e8b1d77f6f",
+                    "token": localStorage.getItem('jwtToken')
                 },
                 data:credentials
                 })
-              .then((response) => console.log(response.data))
-              .then(router.push('/client'))
+              .then((response) => {
+                    setAuthHeader(response.data.token);
+                    this.$router.push('/client')
+                })
+              
               .catch((err) => console.log(err.response));
 
             

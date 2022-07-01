@@ -83,7 +83,9 @@ export default {
             //if (localStorage.email) {
               //  this.email = localStorage.email;
             //}
+            
             localStorage.setItem('email', this.email)
+            //localStorage.setItem('jwtToken')
             axios({
                 method: "POST",
                 url: "http://127.0.0.1:3000/account/authentication/",
@@ -94,9 +96,11 @@ export default {
                 })
               .then((response) => {
                 localStorage.setItem('jwtToken', response.data.token)
+                
                 setAuthHeader(response.data.token);
+                this.$router.push('/')
               })
-              //.then(this.$router.push('/'))
+              
               .catch((err) => console.log(err.response));
               
                 

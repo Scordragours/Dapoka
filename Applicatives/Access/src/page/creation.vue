@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <label class="form-control-label text-muted">Numéro de téléphone</label>
-                            <input type="number" class="form-control" id="telephoneNumber" name="telephoneNumber" placeholder="Numéro de téléphone" v-model="telephoneNumber">
+                            <input type="tel" class="form-control" id="telephoneNumber" name="telephoneNumber" placeholder="Numéro de téléphone" v-model="telephoneNumber">
                         </div>
 
                         <div class="form-group">
@@ -80,7 +80,6 @@
 
 <script>
 import axios from "axios";
-import {useRouter} from "vue-router";
 
 export default {
     name: 'creation',
@@ -107,7 +106,7 @@ export default {
                 telephoneNumber: this.telephoneNumber,
             };
 
-            const router = useRouter();
+            localStorage.setItem('email', this.email)
 
             axios({
                 method: "POST",
@@ -117,8 +116,10 @@ export default {
                 },
                 data:credentials
                 })
-              .then((response) => console.log(response.data))
-              .then(router.push('/'))
+                .then((reponse) => {
+                    this.accounts = reponse.data
+                    this.$router.push('/connexion')
+                })
               .catch((err) => console.log(err.response));
 
             
