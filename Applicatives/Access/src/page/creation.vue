@@ -10,6 +10,10 @@
 
                         <h6 class="msg-info text-center">Inscris-toi en quelques secondes pour te régaler</h6>
 
+                        <div v-if="error" class="alert alert-danger" role="alert">
+                            {{error}}
+                        </div>                        
+
                         <form @submit.prevent="createUser">
 
                         <div class="row py-2">
@@ -92,6 +96,7 @@ export default {
             password: "",
             telephoneNumber: "",
             group: "",
+            error: "",
         };
     },
     methods: {
@@ -120,7 +125,10 @@ export default {
                     this.accounts = reponse.data
                     this.$router.push('/connexion')
                 })
-              .catch((err) => console.log(err.response));
+              .catch((err) => {
+                this.error = 'Informations incorrectes'
+                console.log(err.response)
+                });
 
             
             

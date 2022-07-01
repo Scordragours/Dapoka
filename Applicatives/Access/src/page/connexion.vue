@@ -18,6 +18,10 @@
 
                         <h6 class="msg-info text-center">Ne perds pas une seconde et connectes-toi</h6>
 
+                        <div v-if="error" class="alert alert-danger" role="alert">
+                            {{error}}
+                        </div>
+
                         <form @submit.prevent="loginUser">
 
                         <div class="form-group">
@@ -69,6 +73,7 @@ export default {
         return {
             email: "",
             password: "",
+            error: "",
         };
     
     },
@@ -101,7 +106,10 @@ export default {
                 this.$router.push('/')
               })
               
-              .catch((err) => console.log(err.response));
+              .catch((err) => {
+                this.error = 'Email ou mot de passe incorrect'
+                console.log(err.response)
+                });
               
                 
             
